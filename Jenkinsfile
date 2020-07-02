@@ -31,5 +31,18 @@ pipeline{
 )
             }
         }
+        stage("deployment"){
+            agent{docker'maven:3-alpine'}
+            steps{
+                sh'''
+                 id
+            pwd
+            cd /home/ubuntu/
+            ls -lrt
+            curl -uadmin:AP9EiJ33GJLc9SHUKyBszJBk371 -O "http://52.15.72.169:8081/artifactory/power/sparkjava-hello-world-1.0.war"
+            cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/
+                '''
+            }
+        }
     }
 }
