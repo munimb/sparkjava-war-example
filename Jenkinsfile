@@ -6,9 +6,9 @@ pipeline{
             steps{
                 sh '''
                 mvn sonar:sonar \
-  -Dsonar.projectKey=yellow \
-  -Dsonar.host.url=http://18.191.174.227:9000 \
-  -Dsonar.login=40a100e32ba1c80445b8b725a75332245dc11e63
+  -Dsonar.projectKey=red \
+  -Dsonar.host.url=http://18.217.109.31:9000 \
+  -Dsonar.login=df456b97fbe19933adafa1cbab1a0e496cd83f96
                 '''
             }
         }
@@ -22,11 +22,11 @@ pipeline{
           "files": [
             {
               "pattern": "**/sparkjava-hello-world-1.0.war",
-              "target": "project/"
+              "target": "power/"
             }
          ]
     }''',
-    buildName: 'project',
+    buildName: 'power',
     buildNumber: '1'
 )
             }
