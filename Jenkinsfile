@@ -39,7 +39,7 @@ pipeline{
             pwd
             cd /home/ubuntu/
             ls -lrt
-            curl -uadmin:AP7UT3Zp4KZzYZdtX9LcQ7TPgRW -O "http://3.12.34.164:8081/artifactory/project/"
+            curl -uadmin:AP7UT3Zp4KZzYZdtX9LcQ7TPgRW -O "http://3.12.34.164:8081/artifactory/project/sparkjava-hello-world-1.0.war"
             cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/        
             '''
             }
