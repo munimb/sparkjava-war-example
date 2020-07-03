@@ -7,8 +7,8 @@ pipeline{
                 sh '''
                 mvn sonar:sonar \
   -Dsonar.projectKey=red \
-  -Dsonar.host.url=http://18.217.109.31:9000 \
-  -Dsonar.login=df456b97fbe19933adafa1cbab1a0e496cd83f96
+  -Dsonar.host.url=http://3.133.108.239:9000 \
+  -Dsonar.login=5c7c1d832e3fa7bad9ed8c4a9f41bc3b9134212a
                 '''
             }
         }
@@ -22,26 +22,13 @@ pipeline{
           "files": [
             {
               "pattern": "**/sparkjava-hello-world-1.0.war",
-              "target": "power/"
+              "target": "project/"
             }
          ]
     }''',
-    buildName: 'power',
+    buildName: 'project',
     buildNumber: '1'
 )
-            }
-        }
-        stage("deployment"){
-            agent {label 'slave01'}
-            steps {
-            sh'''
-            id
-            pwd
-            cd /home/ubuntu/
-            ls -lrt
-            curl -uadmin:AP9EiJ33GJLc9SHUKyBszJBk371 -T "http://52.15.72.169:8081/artifactory/power/sparkjava-hello-world-1.0.war"
-            cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/
-                '''
             }
         }
     }
