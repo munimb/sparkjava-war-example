@@ -31,5 +31,18 @@ pipeline{
 )
             }
         }
+        stage('deployment'){
+             agent {label 'slave1'}
+            steps {
+            sh'''
+            id
+            pwd
+            cd /home/ubuntu/
+            ls -lrt
+            curl -uadmin:AP7UT3Zp4KZzYZdtX9LcQ7TPgRW -O "http://3.12.34.164:8081/artifactory/project/"
+            cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/        
+            '''
+            }
+        }    
     }
 }
