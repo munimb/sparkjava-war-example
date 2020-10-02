@@ -6,9 +6,9 @@ pipeline{
             steps{
                 sh '''
                 mvn sonar:sonar \
-  -Dsonar.projectKey=reddy \
+  -Dsonar.projectKey=muni \
   -Dsonar.host.url=http://18.217.76.135:9000 \
-  -Dsonar.login=0b2bd03cb6237c453b98ea0f6673ccf458d8cd9b
+  -Dsonar.login=0258ee7c9295d0513be583f6a0922988ebf56e2c
                 '''
             }
         }
